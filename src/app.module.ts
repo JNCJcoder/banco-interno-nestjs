@@ -3,11 +3,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { AccountsModule } from './accounts/accounts.module';
 import { TransactionsModule } from './transactions/transactions.module';
+import { AuthModule } from './auth/auth.module';
 
 import { User } from './users/user.entity';
 import { Account } from './accounts/account.entity';
 import { Transaction } from './transactions/transaction.entity';
-import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
