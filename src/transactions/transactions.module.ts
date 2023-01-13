@@ -4,8 +4,8 @@ import { TransactionsController } from './transactions.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { Transaction } from './transaction.entity';
-import { UsersModule } from 'src/users/users.module';
-import { AccountsModule } from 'src/accounts/accounts.module';
+import { UsersModule } from '../users/users.module';
+import { AccountsModule } from '../accounts/accounts.module';
 
 @Module({
   imports: [
