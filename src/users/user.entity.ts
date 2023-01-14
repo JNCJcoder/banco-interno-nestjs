@@ -31,4 +31,11 @@ export class User {
     const salt = bcrypt.genSaltSync(10) + process.env.PEPPER;
     this.password = bcrypt.hashSync(this.password, salt);
   }
+
+  constructor(user: Partial<User>) {
+    this.id = user?.id;
+    this.username = user?.username;
+    this.password = user?.password;
+    this.accountId = user?.accountId;
+  }
 }
