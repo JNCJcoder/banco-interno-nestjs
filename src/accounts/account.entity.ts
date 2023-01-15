@@ -19,4 +19,9 @@ export class Account {
 
   @Column({ transformer: currencyTransformer })
   balance?: string;
+
+  constructor(account: Partial<Account>) {
+    this.id = account?.id;
+    this.balance = account?.balance;
+  }
 }
