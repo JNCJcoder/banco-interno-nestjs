@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { CreateTransactionDto } from './dto/createTransaction.dto';
 import { Transaction } from './transaction.entity';
 import { TransactionsController } from './transactions.controller';
 import { TransactionsService } from './transactions.service';
@@ -16,7 +17,7 @@ const req: any = {
   },
 };
 
-const body: any = {
+const body: CreateTransactionDto = {
   debitedUsername: 'test',
   creditedUsername: 'test2',
   value: '50.00',

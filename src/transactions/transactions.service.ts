@@ -6,6 +6,7 @@ import { Transaction } from './transaction.entity';
 
 import * as Currency from 'currency.js';
 import { AccountsService } from '../accounts/accounts.service';
+import { CreateTransactionDto } from './dto/createTransaction.dto';
 
 @Injectable()
 export class TransactionsService {
@@ -16,7 +17,7 @@ export class TransactionsService {
     private readonly accountsService: AccountsService,
   ) { }
 
-  async create(username: string, body: any) {
+  async create(username: string, body: CreateTransactionDto) {
     if (username != body.debitedUsername) {
       throw new UnauthorizedException(
         'Você só pode enviar dinheiro da sua conta.',
