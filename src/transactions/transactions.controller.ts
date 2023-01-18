@@ -1,8 +1,10 @@
 import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { ApiTags } from '@nestjs/swagger';
 import { CreateTransactionDto } from './dto/createTransaction.dto';
 import { TransactionsService } from './transactions.service';
 
+@ApiTags('transactions')
 @Controller('transactions')
 @UseGuards(AuthGuard('jwt'))
 export class TransactionsController {

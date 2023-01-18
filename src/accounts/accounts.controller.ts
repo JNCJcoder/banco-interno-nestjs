@@ -1,7 +1,9 @@
 import { Controller, Get, Req, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { ApiTags } from '@nestjs/swagger';
 import { AccountsService } from './accounts.service';
 
+@ApiTags('accounts')
 @Controller('accounts')
 @UseGuards(AuthGuard('jwt'))
 export class AccountsController {
