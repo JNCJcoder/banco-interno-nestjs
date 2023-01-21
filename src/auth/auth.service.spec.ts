@@ -76,5 +76,14 @@ describe('AuthService', () => {
 
       expect(authService.validateUser(userTest.username, userTestPassword)).rejects.toThrowError();
     });
+
+    it('should return null (invalid User)', async () => {
+      jest.spyOn(usersService, 'findOneByUsername').mockRejectedValueOnce(new Error());
+
+      const result = await authService.validateUser(userTest.username, userTestPassword);
+
+      expect(result).toEqual(null);
+      expect(usersService.findOneByUsername).toHaveBeenCalledTimes(1);
+    });
   });
 });
