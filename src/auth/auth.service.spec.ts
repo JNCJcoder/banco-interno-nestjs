@@ -85,5 +85,12 @@ describe('AuthService', () => {
       expect(result).toEqual(null);
       expect(usersService.findOneByUsername).toHaveBeenCalledTimes(1);
     });
+
+    it('should return null (invalid Password)', async () => {
+      const result = await authService.validateUser(userTest.username, 'invalidPassword');
+
+      expect(result).toEqual(null);
+      expect(usersService.findOneByUsername).toHaveBeenCalledTimes(1);
+    });
   });
 });
